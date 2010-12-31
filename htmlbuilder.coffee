@@ -18,5 +18,5 @@ Builder::html = Builder::tag.partial('html')
 exports.Builder = Builder
 
 b = new Builder(process.stdout)
-
+    
 b.html(lang:'en')
