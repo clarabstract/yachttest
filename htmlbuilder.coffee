@@ -55,19 +55,19 @@ HTML5_TAGS = [
 ]
 
 for tag in HTML5_TAGS
-    Builder::[tag] ?= Builder::tag.partial(tag)
+    Builder::[tag] ?= Builder::tag.bind(tag)
 
 
 
 exports.Builder = Builder
 exports.build = build
 
-build process.stdout, ->
-    @html lang:'en',  =>
-        @body =>
-            @h1 'Hello World!'
-            @p 'This is a lovely building isn\'t it'
-            @p 'WHy yes it certainly seems to be.'
-            @p =>
-                @puts "What is your name?"
-                @input type:'text'
+# build process.stdout, ->
+#     @html lang:'en',  =>
+#         @body =>
+#             @h1 'Hello World!'
+#             @p 'This is a lovely building isn\'t it'
+#             @p 'WHy yes it certainly seems to be.'
+#             @p =>
+#                 @puts "What is your name?"
+#                 @input type:'text'
